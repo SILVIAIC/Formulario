@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="" method="post">
+        Proveedor: <select name="proveedor" id="datos_proveedor">
+          <option></option>
+        </select>
+        <button onclick="addNote()">Agregar</button><br>
+        Cuit: <select name="cuit_proveedor" id="datos_proveedor"></select>
+        <button onclick="addNote()">Agregar</button><br>
+        <label for="puntoDeVenta">Punto de Venta</label><br>
+        <input type="number" name="puntoDeVenta" id=""><br>
+        <label for="numeroTicket">Número de ticket</label><br>
+        <input type="number" name="numeroTicket" id=""><br>
+        <input type="date" name="fecha_adquisicion" id=""><br>
+        <input type="time" name="hora_adquisicion" id=""><br>
+        <label for="cajero">Datos del cajero</label><br>
+        <input type="text" name="cajero"><br>
+        <label for="codigo_cajero">Código de cajero</label><br>
+        <input type="text" name="codigo_cajero"><br>
+        Artículo: <select name= "articulo" id="datos_articulo"></select>
+        <button onclick="addNote()">Agregar</button><br>
+
+    </form>
+<script>
+    
+   
+
+   /* var articulo = new Object();
+
+    articulo.descripción = " ";
+    articulo.envase = " ";
+    articulo.unidadMedida = " ";
+    articulo.cantidad = " ";
+    articulo.alicuotaIva = " ";
+    articulo.alicuotaPromocion = " ";
+    articulo.precioUnidad = " ";
+    
+    for(var key in articulo){
+      prompt(key, " ");
+      
+    };*/
+    var list = document.querySelector("#datos_proveedor");
+  function addToList(name) {
+    var option = document.createElement("option");
+    option.textContent = name;
+    list.appendChild(option);
+  }
+
+  var proveedor = new Object();
+    
+    proveedor.razonSocial = " ";
+    /*proveedor["Cuit"] = " ";*/
+    
+    for(var key in proveedor){ 
+      prompt(key," ");
+        };
+
+  // Initialize the list from localStorage
+  /*var proveedor = JSON.parse(localStorage.getItem("proveedor")) ||
+              {"Proveedor": ""};*/
+  var proveedor = localStorage.setItem(proveedor.razonSocial, " ");
+  for (var name in proveedor)
+    /*if (proveedor.hasOwnProperty(name))*/
+    console.log(proveedor.razonSocial);
+      addToList(name);
+
+  function saveToStorage() {
+    localStorage.setItem("proveedor", JSON.stringify(proveedor));
+  }
+
+
+
+  /*var current = document.querySelector("#currentnote");
+  current.value = proveedor[list.value];
+
+  list.addEventListener("change", function() {
+    current.value = proveedor[list.value];
+  });
+  current.addEventListener("change", function() {
+    proveedor[list.value] = current.value;tml
+    saveToStorage();
+  });*/
+
+  function addNote() {
+    var name = prompt(key, "");
+    /*if (!name) return;*/
+    /*if (!proveedor.hasOwnProperty(name))*/ 
+    for(name in proveedor) {
+      proveedor[name] = "";
+      addToList(name);
+      saveToStorage();
+    }
+    list.value = name;
+    /*current.value = proveedor[name]*/;
+  } 
+        
+
+    
+
+  </script>
+
+  </body>
+
+</html>
